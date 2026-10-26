@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A colorful little 3D Rubik's Cube. Scramble it, then watch it click back into place."
+    />
+    <meta name="theme-color" content="#f2eee5" />
+    <title>Twist Club — A little side quest</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="masthead">
+        <a class="wordmark" href="./" aria-label="Twist Club home">
+          <span class="wordmark-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>TWIST CLUB</span>
+        </a>
+        <p class="edition">A POCKET-SIZED PUZZLE <span>·</span> No. 001</p>
+        <a class="how-to" href="#how-to">HOW TO PLAY <span aria-hidden="true">↘</span></a>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY DOSE OF COLOR</p>
+          <h1 id="page-title">A little<br />sideways<span>.</span></h1>
+          <p class="intro-copy">
+            Six sides. One very satisfying little problem. Give the cube a spin,
+            mix things up, and bring it all back home.
+          </p>
+          <div class="controls" aria-label="Cube controls">
+            <button class="button button-primary" id="scramble-button" type="button">
+              <span class="button-icon" aria-hidden="true">⤨</span>
+              Scramble
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="button button-secondary" id="solve-button" type="button">
+              <span class="button-icon solve-icon" aria-hidden="true">↶</span>
+              Solve
+            </button>
+          </div>
+          <p class="keyboard-hint">
+            <span aria-hidden="true">✳</span> Drag the cube to look around
+          </p>
+        </div>
+
+        <div class="play-panel">
+          <div class="panel-topline">
+            <span class="panel-label"><span class="live-dot"></span> LIVE PUZZLE</span>
+            <span class="move-counter" id="move-counter">00 <span>MOVES</span></span>
+          </div>
+          <div class="cube-stage" id="cube-stage">
+            <div class="stage-grid" aria-hidden="true"></div>
+            <span class="orbit orbit-one" aria-hidden="true"></span>
+            <span class="orbit orbit-two" aria-hidden="true"></span>
+            <span class="spark spark-one" aria-hidden="true">✳</span>
+            <span class="spark spark-two" aria-hidden="true">✦</span>
+            <div
+              class="cube-world"
+              id="cube-world"
+              role="img"
+              aria-label="Solved Rubik's Cube. Drag to change the viewing angle."
+              tabindex="0"
+            ></div>
+            <div class="stage-caption" aria-hidden="true">
+              <span>THE CLASSIC</span>
+              <span>3 × 3 × 3</span>
+            </div>
+          </div>
+          <div class="panel-bottomline">
+            <span id="cube-state" class="cube-state">Ready when you are</span>
+            <span class="state-mark" aria-hidden="true">✳</span>
+          </div>
+          <section class="solve-guide" id="solve-guide" aria-labelledby="solve-guide-title" hidden>
+            <div class="solve-guide-header">
+              <div>
+                <p class="solve-guide-kicker">THE WAY BACK</p>
+                <h2 id="solve-guide-title">Your solve steps</h2>
+              </div>
+              <span class="solve-guide-count" id="solve-guide-count"></span>
+            </div>
+            <ol class="solve-steps" id="solve-steps" aria-label="Steps to solve the cube"></ol>
+            <p class="solve-guide-hint" id="solve-guide-hint"></p>
+          </section>
+          <p class="sr-only" id="action-status" role="status" aria-live="polite" aria-atomic="true">
+            Cube solved and ready.
+          </p>
+        </div>
+      </section>
+
+      <footer class="page-footer" id="how-to">
+        <p><span class="footer-star" aria-hidden="true">✳</span> A tiny timeout for your brain.</p>
+        <p>SCRAMBLE TO BEGIN <span class="footer-rule" aria-hidden="true"></span> SOLVE TO RESET</p>
+      </footer>
+    </main>
+  </body>
+</html>
